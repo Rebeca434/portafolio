@@ -168,6 +168,19 @@ border-radius:8px;
 border:1px solid rgba(255,255,255,0.08);
 }
 
+.skills-list{
+text-align:center;
+font-size:18px;
+line-height:2;
+opacity:.85;
+}
+
+.skills-subtitle{
+text-align:center;
+opacity:.6;
+margin-bottom:25px;
+}
+
 /* ABOUT */
 
 .about p{
@@ -199,8 +212,63 @@ opacity:.5;
 font-size:.9rem;
 }
 
+/*DEMO */
+.demo-container{
+position:relative;
+cursor:pointer;
+}
+
+.demo-img{
+width:100%;
+border-radius:10px;
+display:block;
+}
+
+.demo-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-weight:600;
+font-size:18px;
+border-radius:10px;
+opacity:0;
+transition:0.3s;
+}
+
+.demo-container:hover .demo-overlay{
+opacity:1;
+}
+
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+align-items:center;
+justify-content:center;
+z-index:2000;
+}
+
+.modal img{
+max-width:80%;
+max-height:80%;
+border-radius:10px;
+}
+
 </style>
 </head>
+
 
 <body>
 
@@ -229,7 +297,7 @@ font-size:.9rem;
 
 <h1>Hi, I'm <span class="gradient">Rebeca Portillo</span></h1>
 
-<p>Front-End Developer building modern and responsive web interfaces.</p>
+<p>Front-end developer creating modern and intuitive web interfaces.</p>
 
 <a class="btn" href="#projects">View My Work</a>
 
@@ -248,18 +316,33 @@ font-size:.9rem;
 <div class="card">
 <h3>Comido</h3>
 <p>Landing page for a startup food discovery platform with responsive design and live deployment.</p>
-<a href="http://www.somoscomido.com/" target="_blank">View Project →</a>
+<a href="http://www.somoscomido.com/" target="_blank" rel="noopener">View Project →</a>
 </div>
 
 <div class="card">
 <h3>PetCare</h3>
-<p>Web application to manage pets, owners, appointments and consultations using Node.js and Oracle database.</p>
+<p>Web application for managing pets, owners, appointments and consultations using Node.js and Oracle Database.</p>
+<div class="demo-container" onclick="openModal('images/petcare.gif')">
+<img src="images/petcare.gif" class="demo-img">
+<div class="demo-overlay">
+View Demo
+</div>
+</div>
+
 </div>
 
 <div class="card">
 <h3>Real-Time Chat</h3>
 <p>Python chat system built with sockets and multithreading for real-time communication.</p>
+<div class="demo-container" onclick="openModal('images/wwp2.gif')">
+<img src="images/wwp2.gif" class="demo-img">
+<div class="demo-overlay">
+View Demo
 </div>
+</div>
+
+</div>
+
 
 </div>
 
@@ -271,20 +354,19 @@ font-size:.9rem;
 
 <h2>Skills</h2>
 
-<div class="skills">
+<p class="skills-subtitle">Technologies I've worked with</p>
 
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">Responsive Design</div>
-<div class="skill">Node.js</div>
-<div class="skill">Git</div>
-<div class="skill">Oracle DB</div>
+<div class="skills-list">
+
+<p>HTML • CSS • JavaScript • Astro • React</p>
+
+<p>Node.js • SQL • Oracle</p>
+
+<p>Git • GitHub • REST APIs</p>
 
 </div>
 
 </section>
-
 <!-- ABOUT -->
 
 <section id="about" class="section about">
@@ -292,8 +374,8 @@ font-size:.9rem;
 <h2>About Me</h2>
 
 <p>
-I'm a developer passionate about building modern web interfaces and learning new technologies.
-I enjoy creating responsive layouts, improving user experience and turning ideas into real products.
+I'm a front-end developer interested in building modern and responsive web interfaces. 
+I enjoy learning new technologies and working on projects that turn ideas into real applications.
 </p>
 
 </section>
@@ -306,11 +388,10 @@ I enjoy creating responsive layouts, improving user experience and turning ideas
 
 <p>
 
-<a href="mailto:yourmail@email.com">Email</a>
+<a href="mailto:rebeca.ps.204@gmail.com">Email</a>
 
-<a href="#">LinkedIn</a>
+<a href="https://www.linkedin.com/in/rebeca-portillo-b63196382/">LinkedIn</a>
 
-<a href="#">GitHub</a>
 
 </p>
 
@@ -319,6 +400,21 @@ I enjoy creating responsive layouts, improving user experience and turning ideas
 <footer>
 © 2026 Rebeca Portillo
 </footer>
+<div id="demoModal" class="modal" onclick="closeModal()">
+<img id="modalImg">
+</div>
 
+<script>
+
+function openModal(src){
+document.getElementById("demoModal").style.display="flex";
+document.getElementById("modalImg").src=src;
+}
+
+function closeModal(){
+document.getElementById("demoModal").style.display="none";
+}
+
+</script>
 </body>
 </html>
