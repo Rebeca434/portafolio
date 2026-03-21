@@ -120,8 +120,14 @@ margin-bottom:60px;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(2, 1fr);
 gap:30px;
+}
+
+@media (max-width: 768px){
+.grid{
+grid-template-columns:1fr;
+}
 }
 
 .card{
@@ -320,6 +326,25 @@ border-radius:10px;
 </div>
 
 <div class="card">
+<h3>Movie Tracker</h3>
+<p>React-based movie tracking app that lets users search movies and manage watch status. </p>
+<a href="https://movietrack-omega.vercel.app/" target="_blank" rel="noopener">View Project →</a>
+</div>
+
+<div class="card">
+<h3>Real-Time Chat</h3>
+<p>Python chat system built with sockets and multithreading for real-time communication.</p>
+<a href="https://github.com/a368073/wpp2" target="_blank" rel="noopener">View Code →</a>
+<div class="demo-container" onclick="openModal('images/wwp2.gif')">
+<img src="images/wwp2.gif" class="demo-img">
+<div class="demo-overlay">
+View Demo
+</div>
+</div>
+
+</div>
+
+<div class="card">
 <h3>PetCare</h3>
 <p>Web application for managing pets, owners, appointments and consultations using Node.js and Oracle Database.</p>
 <div class="demo-container" onclick="openModal('images/petcare.gif')">
@@ -331,17 +356,9 @@ View Demo
 
 </div>
 
-<div class="card">
-<h3>Real-Time Chat</h3>
-<p>Python chat system built with sockets and multithreading for real-time communication.</p>
-<div class="demo-container" onclick="openModal('images/wwp2.gif')">
-<img src="images/wwp2.gif" class="demo-img">
-<div class="demo-overlay">
-View Demo
-</div>
-</div>
 
-</div>
+
+
 
 
 </div>
